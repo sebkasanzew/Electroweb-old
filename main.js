@@ -1,6 +1,7 @@
 import { app, BrowserWindow } from 'electron'
 
-let mainWindow = null
+const windowStateKeeper = require('electron-window-state')
+let mainWindow
 
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {
@@ -9,7 +10,25 @@ app.on('window-all-closed', () => {
 })
 
 app.on('ready', () => {
-	mainWindow = new BrowserWindow({width: 800, height: 600})
+	// Load the previous state with fallback to defaults
+	let mainWindowState = windowStateKeeper({
+		defaultWidth: 1000,
+		defaultHeight: 800,
+	})
+
+	// Create the window using the state information
+	mainWindow = new BrowserWindow({
+		'x': mainWindowState.x,
+		'y': mainWindowState.y,
+		'width': mainWindowState.width,
+		'height': mainWindowState.height,
+	})
+
+	// Let us register listeners on the window, so we can update the state
+	// automatically (the listeners will be removed when the window is closed)
+	// and restore the maximized or full screen state
+	mainWindowState.manage(mainWindow)
+
 	mainWindow.loadURL('file://' + __dirname + '/index.html')
 	mainWindow.on('closed', () => {
 		mainWindow = null

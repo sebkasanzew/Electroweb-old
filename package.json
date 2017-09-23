@@ -11,7 +11,9 @@
   "repository": "https://github.com/Sebkasanzew/Electronweb",
   "author": "Sebastian Kasanzew",
   "licence": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "electron-window-state": "^4.1.1"
+  },
   "devDependencies": {
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",

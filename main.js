@@ -1,6 +1,6 @@
 import { app, BrowserWindow } from 'electron'
+import windowStateKeeper from 'electron-window-state'
 
-const windowStateKeeper = require('electron-window-state')
 let mainWindow
 
 app.on('window-all-closed', () => {

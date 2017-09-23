@@ -6,13 +6,17 @@
   "scripts": {
     "start": "electron -r babel-register .",
     "dev": "electron -r babel-register . --debug",
-    "test": "no tests set up yet"
+    "test": "echo 'no tests set up yet'"
   },
   "repository": "https://github.com/Sebkasanzew/Electronweb",
   "author": "Sebastian Kasanzew",
   "licence": "MIT",
   "dependencies": {
-    "electron-window-state": "^4.1.1"
+    "electron-store": "^1.3.0",
+    "electron-window-state": "^4.1.1",
+    "jquery": "^3.2.1",
+    "materialize-css": "^0.100.2",
+    "react-materialize": "^1.0.14"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.0",

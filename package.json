@@ -12,6 +12,7 @@
   "author": "Sebastian Kasanzew",
   "licence": "MIT",
   "dependencies": {
+    "electron-reload": "^1.2.1",
     "electron-store": "^1.3.0",
     "electron-window-state": "^4.1.1",
     "jquery": "^3.2.1",

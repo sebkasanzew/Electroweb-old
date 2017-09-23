@@ -3,6 +3,9 @@ import windowStateKeeper from 'electron-window-state'
 
 let mainWindow
 
+// TODO remove in production
+require('electron-reload')(__dirname)
+
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {
 		app.quit()

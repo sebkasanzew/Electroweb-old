@@ -32,7 +32,7 @@ app.on('ready', () => {
 	// and restore the maximized or full screen state
 	mainWindowState.manage(mainWindow)
 
-	mainWindow.loadURL('file://' + __dirname + '/index.html')
+	mainWindow.loadURL(`file://${__dirname}/index.html`)
 	mainWindow.on('closed', () => {
 		mainWindow = null
 	})

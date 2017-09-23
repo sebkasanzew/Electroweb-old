@@ -1,0 +1,24 @@
+{
+  "name": "Electroweb",
+  "productName": "Electroweb",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron -r babel-register .",
+    "dev": "electron -r babel-register . --debug",
+    "test": "no tests set up yet"
+  },
+  "repository": "https://github.com/Sebkasanzew/Electronweb",
+  "author": "Sebastian Kasanzew",
+  "licence": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "electron": "^1.7.6",
+    "electron-packager": "^9.1.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}

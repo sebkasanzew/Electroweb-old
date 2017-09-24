@@ -17,26 +17,27 @@ function cpuTemp(callback) {
 				max: -1.0,
 			}
 
-			exec(`wmic /namespace:\\\\root\\wmi PATH MSAcpi_ThermalZoneTemperature get CurrentTemperature`, function(error, stdout) {
-				if (!error) {
-					let sum = 0
-					let lines = stdout.trim().split(/\s\s+/)
-					lines.forEach(function(line) {
-						if (line.match('CriticalTripPoint') && !result.max)
-							result.max = (parseInt(line.split('CriticalTripPoint=')[1]) - 2732) / 10
-						else if (line.match('CurrentTemperature')) {
-							let value = (parseInt(line.split('CurrentTemperature=')[1]) - 2732) / 10
-							sum = sum + value
-							result.cores.push(value)
+			exec(`wmic /namespace:\\\\root\\wmi PATH MSAcpi_ThermalZoneTemperature get CurrentTemperature`,
+					(error, stdout) => {
+						if (!error) {
+							let sum = 0
+							let lines = stdout.trim().split(/\s\s+/)
+							lines.forEach((line) => {
+								if (line.match('CriticalTripPoint') && !result.max)
+									result.max = (parseInt(line.split('CriticalTripPoint=')[1]) - 2732) / 10
+								else if (line.match('CurrentTemperature')) {
+									let value = (parseInt(line.split('CurrentTemperature=')[1]) - 2732) / 10
+									sum = sum + value
+									result.cores.push(value)
+								}
+							})
+							if (result.cores.length) {
+								result.main = sum / result.cores.length
+							}
+						} else {
+							con.log(error)
 						}
 					})
-					if (result.cores.length) {
-						result.main = sum / result.cores.length
-					}
-				} else {
-					con.log(error)
-				}
-			})
 
 			if (callback) {
 				callback(result)

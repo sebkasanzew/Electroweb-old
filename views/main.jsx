@@ -21,9 +21,12 @@ export default class Main extends React.Component {
 				.then(data => con.log(data))
 				.catch(error => con.error(error))
 
-		/*si.cpuTemperature()
-				.then(data => con.log(data))
-				.catch(error => con.error(error))*/
+		si.cpuTemperature()
+				.then(data => {
+					con.log(`sebhildebrandt/systeminformation`)
+					con.log(data)
+				})
+				.catch(error => con.error(error))
 
 		return <div>
 			<Button waves='light'>EDIT ME<Icon left>save</Icon></Button>

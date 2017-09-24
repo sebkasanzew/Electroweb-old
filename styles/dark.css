@@ -1,0 +1,19 @@
+html, body {
+    background-color: #333;
+}
+
+html,
+body, 
+#app,
+[data-reactroot] {
+    height: 100%;
+}
+
+.detail {
+    background-color: #1D1D1D;
+    height: 100%;
+}
+
+.material-icons.menu-icon-color {
+    color: #CCC;
+}

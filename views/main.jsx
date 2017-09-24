@@ -1,7 +1,9 @@
 'use babel'
 
 import React from 'react'
-import { Button, Icon } from 'react-materialize'
+import { Button, Icon, Row, Col } from 'react-materialize'
+
+import Menu from './menu'
 
 /*
 * Use this doc to edit the view:
@@ -10,9 +12,16 @@ import { Button, Icon } from 'react-materialize'
 export default class Main extends React.Component {
 	render() {
 		return <div>
-			<Button waves='light'>EDIT ME<Icon left>save</Icon></Button>
-			<Button waves='light'>EDIT ME<Icon left>save</Icon></Button>
-			<Button waves='light'>EDIT ME<Icon left>save</Icon></Button>
+			<Row>
+				<Col s={4} className="side-menu">
+					<Menu />
+				</Col>
+				<Col s={8} className="detail">
+					<Button waves='light'>EDIT ME<Icon left>save</Icon></Button>
+					<Button waves='light'>EDIT ME<Icon left>save</Icon></Button>
+					<Button waves='light'>EDIT ME<Icon left>save</Icon></Button>
+				</Col>
+			</Row>
 		</div>
 	}
 }

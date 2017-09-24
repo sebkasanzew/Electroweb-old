@@ -3,6 +3,7 @@ import windowStateKeeper from 'electron-window-state'
 import path from 'path'
 
 // TODO remove in production
+// TODO switch to https://github.com/electron/electron-compile
 require('electron-reload')(__dirname, {
 	electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
 })

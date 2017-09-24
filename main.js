@@ -1,15 +1,12 @@
 import { app, BrowserWindow } from 'electron'
 import windowStateKeeper from 'electron-window-state'
+import path from 'path'
 
 let mainWindow
 
 // TODO remove in production
-require('electron-reload')(__dirname)
-
-app.on('window-all-closed', () => {
-	if (process.platform !== 'darwin') {
-		app.quit()
-	}
+require('electron-reload')(__dirname, {
+	electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
 })
 
 app.on('ready', () => {

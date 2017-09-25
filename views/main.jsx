@@ -50,12 +50,10 @@ export default class Main extends React.Component {
 		return <div>
 			<Row>
 				<Col s={4} className="side-menu">
-					<Menu />
+					<Menu/>
 				</Col>
 				<Col s={8} className="detail">
 					<Button waves='light'>{this.state.currentCPULoad}<Icon left>save</Icon></Button>
-					<Button waves='light'>EDIT ME<Icon left>save</Icon></Button>
-					<Button waves='light'>EDIT ME<Icon left>save</Icon></Button>
 				</Col>
 			</Row>
 		</div>

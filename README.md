@@ -14,6 +14,13 @@ To start the app in **dev mode** with hot reloading of views run:
 $ npm run dev
 ```
 
+### Additional Dev Tools
+
+To get a `devtron` tab in the developer tools (`ctrl`/`cmd` + `shift` + `i`) execute the following from the Console tab of the running Electron app's developer tools:
+```
+require('devtron').install()
+```
+
 ## Licence
 MIT License
 

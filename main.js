@@ -1,15 +1,17 @@
 import { app, BrowserWindow } from 'electron'
 import windowStateKeeper from 'electron-window-state'
 import path from 'path'
+import isDev from 'electron-is-dev'
 
-// TODO remove in production
 // TODO switch to https://github.com/electron/electron-compile
-require('electron-reload')(__dirname, {
-	electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
-})
+if (isDev) {
+	require('electron-debug')({showDevTools: true})
+	require('electron-reload')(__dirname, {
+		electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+	})
+}
 
 app.on('ready', () => {
-
 	let mainWindow = null
 	let loading = new BrowserWindow({
 		width: 300,

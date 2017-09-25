@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Electroweb</title>
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="node_modules/materialize-css/js/hammer.min.js"></script>
+	<script src="node_modules/materialize-css/js/hammer.min.js" onload="window.Hammer = module.exports;"></script>
 	<script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
 	<script>
 			require('babel-register')
